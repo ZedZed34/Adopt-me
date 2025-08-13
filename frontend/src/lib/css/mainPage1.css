@@ -1,0 +1,2231 @@
+@font-face {
+    font-family: 'heyhoo';
+    src: url("../font/heyhoo-lgnmd.ttf");
+    }
+
+@font-face {
+    font-family: 'ADR';
+    src: url("../font/ArchitectsDaughter-Regular.ttf");
+    }
+
+@font-face {
+    font-family: 'roboto';
+    src: url("../font/Roboto-Medium.ttf");
+    }
+
+@font-face {
+    font-family: 'thewonder';
+    src: url("../font/thewonder.ttf");
+    }
+
+@font-face {
+    font-family: 'fornest';
+    src: url("../font/fornest.ttf");
+    }
+
+@font-face {
+    font-family: 'welovepeace';
+    src: url("../font/welovepeace.ttf");
+    }
+
+
+/*
+CSS of the Whole Layout
+*/
+.container {
+        position: relative;
+        width: 1500px;
+        margin: 0 auto;
+        background-color: rgba(255, 255, 255, 0.362);
+        align-items: center;
+      
+        @media (max-width: 1200px) {
+          width: 100%;
+        }
+      }
+
+ body {
+        background: url("$lib/image/Background.png");
+        background-repeat: no-repeat;
+        height: 100%;
+        width: 100%;
+        background-size: cover;
+
+      }
+
+
+/*
+CSS of Log in
+*/ 
+#loginHeader{
+  position: relative;
+  top: 30px;
+  color: #a85337;
+  text-align: left;
+  margin: 20px;
+  padding: 20px;
+  font-family: "welovepeace";
+  font-size: 30px;
+  letter-spacing: 5px;
+}
+    
+    #login-container{
+      background-color: rgba(255, 255, 255, 0.6);
+      position: relative;
+      margin: 0 auto;
+      bottom: 25px;
+      width: 500px;
+      height: 250px;
+      border: dotted rgb(10, 20, 10);
+      border-radius: 12px;
+      padding: 15px 32px;
+      display: grid;
+      grid-template-columns: auto 1fr;
+      gap: 10px;
+
+      & label{
+        font-size: 20px;
+        padding: 5px;
+      }
+    }
+  
+    #loginButton {
+      grid-column: 1 / 3;
+      padding: 10px;
+      margin: 25px;
+      font-size: 15px;
+      border-radius: 12px;
+      cursor: pointer;
+    }
+  
+    .error {
+      grid-column: 1 / 3;
+      font-weight: bold;
+      color: darkred;
+      background-color: lightcoral;
+      padding: 5px;
+      text-align: center;
+    }
+
+    .signup{
+      font-size: 18px;
+
+      & a{
+        text-decoration: underline;
+        font-family: "roboto";
+        font-size: 20px;
+        position: relative;
+        left:200px;
+        color: #21492a;
+      }
+    }
+
+
+/*
+CSS of Sign up
+*/ 
+#registerHeader{
+  position: relative;
+  top: 30px;
+  color: #a85337;
+  text-align: left;
+  margin: 20px;
+  padding: 20px;
+  font-family: "welovepeace";
+  font-size: 30px;
+  letter-spacing: 5px;
+}
+
+#register-container{
+  background-color: rgba(255, 255, 255, 0.6);
+  position: relative;
+  margin: 0 auto;
+  bottom: 25px;
+  width: 500px;
+  height: 600px;
+  border: dotted rgb(10, 20, 10);
+  border-radius: 12px;
+  padding: 15px 32px;
+  display: grid;
+  grid-template-columns: auto 1fr;
+  gap: 10px;
+
+  & label{
+    font-size: 20px;
+    padding: 5px;
+  }
+
+  & input{
+    width: 200px;
+    height: 20px;
+  }
+}
+
+#registerButton {
+  grid-column: 1 / 3;
+  padding: 10px;
+  margin: 25px;
+  font-size: 15px;
+  border-radius: 12px;
+  cursor: pointer;
+}
+
+.login{
+  font-size: 18px;
+
+  & a{
+    text-decoration: underline;
+    font-family: "roboto";
+    font-size: 18px;
+    position: relative;
+    left:200px;
+    color: #21492a;
+  }
+}
+
+
+.pickPP{
+  display: flex;
+}
+
+.pickPP-image{
+  display: flex;
+  flex-direction:column;
+  gap: 10px;
+  position: relative;
+  top: 15px;
+  left: 200px;
+
+  & button{
+    width: 100px;
+    font-size: 15px;
+    border-radius: 12px;
+    cursor: pointer;
+  }
+
+  & img{
+  width: 100px;
+  height: 100px;
+}
+}  
+
+
+/*
+CSS of First Part
+*/ 
+.dividingLine{
+  overflow: hidden;
+  text-align: center;
+  margin: 25px;
+}
+.pawPrint{
+  display: inline-block;
+  width: 1680px;
+}
+
+#login {
+  margin: 5px;
+  background-color: #B9D8A8;
+  border: none;
+  border-radius: 12px;
+  padding: 15px 32px;
+  color:#87a803;
+  font-size: 1rem;
+  font-weight: bold;
+
+
+  &:hover {
+    background-color: rgba(255, 255, 255, 0.2);
+    transition-duration: 0.8s;
+    border-radius: 12px;
+  }
+}
+
+#logout{
+  position: relative;
+  bottom: 15px;
+     margin: 5px;
+    background-color: #B9D8A8;
+    border: none;
+    border-radius: 12px;
+    padding: 15px 32px;
+    color:#a85337;
+    font-size: 2rem;
+    font-weight: bold;
+    font-family: "thewonder";
+    cursor: pointer;
+  
+    &:hover {
+      background-color: rgba(255, 255, 255, 0.2);
+      transition-duration: 0.8s;
+      border-radius: 12px;
+    } 
+}
+
+.pop-up-logout{
+  background: url("$lib/image/pawBG.png");
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  padding: 50px;
+  border: 1px solid #ccc;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  font-family: Arial, sans-serif;
+  z-index: 999;
+
+  & p{
+    font-size: 20px;
+  }
+
+  & button{
+    width: 80px;
+    height: 40px;
+    font-size: 20px ;
+    margin: 10px;
+    background-color: #1e90ff;
+    color: #fff;
+    border: none;
+    border-radius: 12px;
+    padding: 10px;
+    cursor: pointer;
+    
+  }
+}
+
+
+nav {
+background-color: #9BC07C;
+padding-left: 20px;
+box-shadow: 0 5px 3px lightgray;
+
+
+& > ul {
+  list-style: none;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 200px;
+  
+}
+
+& li {
+  padding-top: 10px;
+  position: relative;
+  top: 12px;
+  
+  &:hover {
+    transition-duration: 0.8s;
+    transform: scale(1.1);
+  }
+}
+
+& a {
+  color:#434e2a;
+  font-size: 2rem;
+  font-weight: bold;
+  text-decoration: none;
+  font-family: "thewonder";
+  cursor: pointer;
+
+    &:hover {
+      color: #d27a7b;
+      transition-duration: 0.8s;
+    }
+  }
+}
+
+
+ #mainHeader {
+    background: linear-gradient(to right, transparent, #B9D8A8);
+    color: #21492a;
+    text-align: center;
+    box-shadow: 0 5px 3px lightgray;
+    margin: 20px;
+    border: 50px;
+    font-family: "welovepeace";
+    font-size: 70px;
+    letter-spacing: 10px;
+    text-shadow: 
+    1px 1px 0 #D2D478,
+    2px 2px 0 #277025,
+    3px 3px 0 #277025,
+    4px 4px 0 #D2D478;
+  }
+
+  #pawIcon {
+    position:absolute;
+    left: 400px;
+    top: 0px;
+    width: 80px;
+  }
+
+  #rawPaw {
+    position:absolute;
+    right: 180px;
+    top: -45px;
+    width: 300px;
+  }
+
+
+
+#firstPart{
+  display: flex;
+  padding: 20px;
+  padding-top:0px;
+  margin: 20px;
+  margin-top: 0px;
+  overflow: hidden;
+}
+
+  .introduction-box {
+    position: relative;
+    top: 20px;
+    background: 
+    linear-gradient(to right, transparent, 50%, pink),
+    url("$lib/image/pawBG.png");
+    background-size: 250%;
+    border: 0.3rem outset #efaaa5;
+    outline: 0.3rem solid #B9D8A8;
+    border-radius: 12px;
+    width: 400px;
+    height: 550px;
+    padding: 20px;
+    margin: 0 auto;
+
+    & img {
+      position: relative;
+      width: 150px;
+      height: 100px;
+      bottom: 30px;
+      left: 280px;
+    }
+
+    &:hover {
+        transition-duration: 1.5s;
+        transform: scale(1.03);
+      }
+
+    & #mainHeading {
+      color: #a85337;
+      text-align: left;
+      font-size: 30px;
+      margin: 5px;
+      padding: 10px;
+      font-family: "welovepeace";
+      letter-spacing: 5px;
+      text-shadow: 
+      1px 1px 0 #d27a7b,
+      2px 2px 0 #dfdaa3,
+      3px 3px 0 #d27a7b,
+      4px 4px 0 #dfdaa3;
+    }
+
+    & #subheading {
+      color: #a85337;
+      text-align: right;
+      font-size: 20px;
+      margin: 0;
+      font-family: "roboto";
+      letter-spacing: 5px;
+      text-shadow: 
+      1px 1px 0 #d27a7b,
+      2px 2px 0 #dfdaa3,
+      3px 3px 0 #d27a7b,
+      4px 4px 0 #dfdaa3;
+    }
+
+
+    & p {
+      color: #277025;
+      margin: 10px;
+      text-align: left;
+      font-size: 18px;
+      text-indent: 20px;
+      font-family:"roboto";
+      line-height: 32px;
+    }
+  } 
+  
+  .slideshow {
+    width: 650px;
+    height: 450px;
+    position: relative;
+    left: 90px;
+    overflow: hidden;
+    margin: 20px;
+    border: 0.5rem outset #efaaa5;
+    outline: 0.5rem solid #B9D8A8;
+    border-radius: 12px;
+
+    & #last {
+      position: relative;
+      top: 200px;
+      font-size: 40px;
+      background-color: transparent;
+      border: none;
+      color: rgb(199, 115, 129);
+      text-shadow: 
+      1px 1px 0 #d27a7b,
+      2px 2px 0 #dfdaa3,
+      3px 3px 0 #d27a7b,
+      4px 4px 0 #dfdaa3;
+      cursor: pointer;
+
+    }
+
+    & #next{
+      position: relative;
+      z-index: 1;
+      top: 200px;
+      left: 550px;
+      font-size: 40px;
+      background-color: transparent;
+      border: none;
+      color: rgb(199, 115, 129);
+      text-shadow: 
+      1px 1px 0 #d27a7b,
+      2px 2px 0 #dfdaa3,
+      3px 3px 0 #d27a7b,
+      4px 4px 0 #dfdaa3;
+      cursor: pointer;
+
+    }
+  }
+
+  #images-container{
+    position: absolute;
+    left: 0; 
+    top: 0;
+    margin: 0 auto;
+    display: flex;
+    width: 100%; 
+    transition: transform 1.5s ease-in-out;
+    
+  & img {
+    flex: 0 0 100%;
+    width: 650px;
+    height: 450px;
+    float: left;
+  }
+}
+
+
+  .activityBox{
+    background: 
+    linear-gradient(to right, transparent, 50%, pink),
+    url("$lib/image/pawBG.png");
+    background-size: 250%;
+    width: 650px;
+    height: 100px;
+    position: relative;
+    top: 5px;
+    left: 90px;
+    overflow: hidden;
+    margin: 0 auto;
+    border: 0.3rem outset #efaaa5;
+    outline: 0.3rem solid #B9D8A8;
+    border-radius: 12px;
+
+    &:hover {
+        transition-duration: 1.5s;
+        transform: scale(1.03);
+      }
+
+    & #loudspeaker {
+      position: relative;
+      z-index: 1;
+      width: 100px;
+      height: 90px;
+      bottom: 90px;
+      left: 10px;
+    }
+  }
+
+
+  .activity{
+    & h3 {
+      font-family: "heyhoo";
+      letter-spacing: 3px;
+      text-align: right;
+      padding-right: 15px;
+      color: #a85337;
+      text-shadow: 
+      1px 1px 0 #d27a7b,
+      2px 2px 0 #dfdaa3,
+      3px 3px 0 #d27a7b,
+      4px 4px 0 #dfdaa3;
+    }
+
+    & p {
+      font-family: "heyhoo";
+      letter-spacing: 3px;
+      text-align: right;
+      padding-right: 15px;
+      font-size: 19px;
+      color: #a85337;
+      text-shadow: 
+      1px 1px 0 #d27a7b,
+      2px 2px 0 #dfdaa3,
+      3px 3px 0 #d27a7b,
+      4px 4px 0 #dfdaa3;
+    }
+  }
+
+  .sideNavBox {
+    position: fixed;
+    right:0px;
+    top: 280px;
+    background: 
+    linear-gradient(to right, transparent, 10%, pink);
+    background-size: 250%;
+    border: 0.3rem outset #efaaa5;
+    outline: 0.3rem solid #B9D8A8;
+    border-radius: 12px;
+    width: 170px;
+    height: 320px;
+    padding: 20px;
+    margin: 20px;
+    z-index: 2;
+    transition: 0.5s; 
+
+    & h2 {
+    color: #a85337;
+    margin: 0;
+    font-family: "welovepeace";
+    font-size: 22px;
+    padding-top: 10px;
+    text-shadow: 
+    1px 1px 0 #d27a7b,
+    2px 2px 0 #dfdaa3,
+    3px 3px 0 #d27a7b,
+    4px 4px 0 #dfdaa3;
+    }
+
+    & #gingerCat{
+    position: absolute;
+    z-index: 1;
+    width: 100px;
+    height: 80px;
+    right: 120px;
+    top: -50px;
+    }
+
+    & .customerService {
+      margin-top: 10px;
+      padding: 10px;
+      background-color: rgba(255, 255, 255, 0.5);
+      border-radius: 20px;
+
+
+      & p {
+        margin-top: 0px;
+        color: #a85337;
+        font-family: "heyhoo";
+        font-size: 19px;
+      }
+
+      & button {
+        margin-top: 0px;
+        color: #a85337;
+        font-family: "heyhoo";
+        font-size: 15px;
+        text-decoration: none;
+        background-color: rgba(255, 255, 255, 0.7);
+        border: dotted ;
+        border-radius: 12px;
+        cursor: pointer;
+
+        &:hover {
+        color: red;
+      }
+      }
+    }
+
+    &:hover {
+        transition-duration: 1.5s;
+        transform: scale(1.03);
+      }
+  }
+
+
+  .sideNav a {
+    padding-top: 20px;
+    text-decoration: none;
+    text-align: left;
+    font-size: 21px;
+    color: #21492a;
+    display: block;
+    transition: 0.3s;
+    font-family: "heyhoo";
+    text-shadow: 
+      1px 1px 0 #d27a7b,
+      2px 2px 0 #dfdaa3,
+      3px 3px 0 #d27a7b,
+      4px 4px 0 #dfdaa3;
+   
+    &:hover {
+        transition-duration: 0.5s;
+        color: #d27a7b;
+        cursor: pointer;
+      }
+}
+
+.pop-up-customerService{
+  z-index: 1;
+  background: url("$lib/image/pawBG.png");
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  padding: 50px;
+  border: 1px solid #ccc;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  width: 500px;
+  height: 500px;
+
+  & h3{
+    font-size: 25px;
+    color: #21492a;
+    font-family: "welovepeace";
+  }
+
+  & p{
+    font-size: 20px;
+  }
+
+  & button{
+    position: absolute;
+    left: 530px;
+    top: 5px;
+    width: 30px;
+    height: 30px;
+    font-size: 15px ;
+    margin: 10px;
+  }
+
+  .customerService-container{
+    background: rgb(255, 255, 255,0.6);
+    border: dotted black 2px;
+    border-radius: 12px;
+    width: 500px;
+    height: 500px;
+    padding: 10px;
+  }
+
+  & .faq {
+    margin-left: 10px;
+    cursor: pointer;
+    margin-bottom: 20px;
+    font-size: 18px;
+    font-weight: bold;
+
+  }
+
+  & .answer {
+    display: none;
+    margin-left: 50px;
+    margin-bottom: 20px;
+    font-size: 16px;
+    color: #21492a;
+    font-family: 'roboto';
+    font-weight: bold;
+    transition: opacity 0.5s ease;
+  }
+
+  & .answer.active {
+    display: block;
+    opacity: 1;
+  }
+}
+
+.customerService-container p{
+  &:hover {
+    transition-duration: 1.5s;
+    transform: scale(1.03);
+  }
+}
+
+/*
+CSS of Articles
+*/
+
+#articleContainer{
+  
+  background: 
+    linear-gradient(to bottom right, transparent, 80%, #efaaa5),
+    url("$lib/image/pawBG.png");
+  width: 1100px;
+  height: 400px;
+  border: 0.3rem outset #efaaa5;
+  outline: 0.3rem solid #B9D8A8;
+  border-radius: 12px;
+  margin: 0 auto;
+  padding: 50px;
+  margin-bottom: 50px;
+  
+
+  & h1{
+  background: linear-gradient(to right, transparent, #B9D8A8);
+  color: #21492a;
+  font-family: "welovepeace";
+  font-size: 40px;
+  letter-spacing: 10px;
+  text-shadow: 
+    1px 1px 0 #D2D478,
+    2px 2px 0 #277025,
+    3px 3px 0 #277025,
+    4px 4px 0 #D2D478;
+  text-align: center;
+  box-shadow: 0 5px 3px lightgray;
+  padding: 10px;
+  }
+
+  & #pawIcon{
+    position: relative;
+    width: 80px;
+    top: -100px;
+    left: 210px;
+  }
+}
+
+
+.articleOrderButton {
+  display: flex;
+  position: relative;
+  top: -90px;
+
+  & button{
+    margin: 5px;
+    color: #ad3408;
+    padding: 10px 20px;
+    background-color: rgba(255, 255, 255, 0.6);
+    font-family: "heyhoo";
+    font-size: 20px;
+    border: #a85337 dotted ;
+    border-radius: 12px;
+    cursor: pointer;
+
+    &:hover {
+      transition-duration: 0.8s;
+      transform: scale(1.1);
+      color: #d27a7b;
+    }
+  }
+}
+
+
+.articleLine {
+  display: flex;
+  align-items: center;
+  gap: 100px;
+  font-family: "roboto";
+  color: #a85337;
+  font-size: 17px;
+
+  & .articleLink {
+    position: relative;
+    top: -80px;
+    width: 400px;
+    margin-left: 10px;
+    text-decoration: none;
+    padding: 0px;
+    color: #a85337;
+    cursor: pointer;
+}
+
+  & .date {
+    position: relative;
+    top: -80px;
+    right: -200px;
+    width: 200px;
+    margin-left: 10px;
+  }
+}
+
+.readMoreButton-container{
+  justify-content: flex-end;
+  display: flex;
+  position: relative;
+  bottom: 80px;
+
+  & button{
+    color: #a85337;
+    margin: 5px;
+    padding: 10px 20px;
+    background-color: rgba(255, 255, 255, 0.6);
+    font-family: "heyhoo";
+    font-size: 20px;
+    border: #a85337 dotted ;
+    border-radius: 12px;
+    cursor: pointer;
+  }
+
+  & :hover{
+    transition-duration: 0.5s;
+    transform: scale(1.03);
+    cursor: pointer;
+  }
+}
+
+.likeButton{
+  position: relative;
+  top: -80px;
+  right: -100px;
+  width: 500px;
+  display: flex;
+  justify-self: right;
+  margin-right: 0px;
+  gap: 5px;
+  font-size: 10px;
+}
+
+
+.thumb-button{
+
+  background-color: rgba(255, 255, 255, 0.6);
+  color: #a85337;
+  font-family: "heyhoo";
+  text-decoration: none;
+  border: dotted ;
+  border-radius: 12px;
+  margin: 10px;
+  padding: 5px;
+  animation: tada 1s;
+  cursor: pointer;
+
+}
+
+.thumb-button:hover{
+  animation-duration: 1s;
+}
+
+.thumb-button:active{
+  animation: none;
+}
+
+@keyframes tada {
+  from {
+      transform: scale3d(1, 1, 1)
+  }
+  10%, 20% {
+      transform: scale3d(.9, .9, .9) rotate3d(0, 0, 1, -3deg)
+  }
+  30%, 50%, 70%, 90% {
+      transform: scale3d(1.1, 1.1, 1.1) rotate3d(0, 0, 1, 3deg)
+  }
+  40%, 60%, 80% {
+      transform: scale3d(1.1, 1.1, 1.1) rotate3d(0, 0, 1, -3deg)
+  }
+  to {
+      transform: scale3d(1, 1, 1)
+  }
+}
+
+.thumb-icon {
+  font-size: 18px;
+
+  & :hover{
+    transition-duration: 1.5s;
+    transform: scale(1.03);
+    cursor: pointer;
+}
+}
+
+/*
+CSS of FounderStory
+*/
+
+#FounderStoryContainer{
+  
+  background: 
+    linear-gradient(to bottom right, transparent, 80%, #efaaa5),
+    url("$lib/image/pawBG.png");
+  width: 1100px;
+  height: 700px;
+  border: 0.3rem outset #efaaa5;
+  outline: 0.3rem solid #B9D8A8;
+  border-radius: 12px;
+  margin: 0 auto;
+  padding: 50px;
+  
+
+  & h1{
+  background: linear-gradient(to right, transparent, #B9D8A8);
+  color: #21492a;
+  font-family: "welovepeace";
+  font-size: 40px;
+  letter-spacing: 10px;
+  text-shadow: 
+    1px 1px 0 #D2D478,
+    2px 2px 0 #277025,
+    3px 3px 0 #277025,
+    4px 4px 0 #D2D478;
+  text-align: center;
+  box-shadow: 0 5px 3px lightgray;
+  padding: 10px;
+  }
+
+  & #pawIcon{
+    position: relative;
+    width: 80px;
+    top: -100px;
+    left: 210px;
+  }
+}
+
+#FounderStoryMainPart{
+  display: flex;
+  gap: 20px;
+  margin: 0px;
+  padding: 0px;
+
+
+  & img{
+    position: relative;
+    top: -80px;
+    width: 250px;
+    height: 350px;
+    margin-left: 10px;
+    border-radius: 12px;
+    border: dotted #a85337;
+  }
+
+  & :hover{
+    transition-duration: 1.5s;
+    transform: scale(1.02);
+  }
+
+  & .name{
+    position: relative;
+    top: -80px;
+    font-family: "heyhoo";
+    text-align: center;
+    font-size: 30px;
+    color: #21492a;
+    text-shadow: 
+    1px 1px 0 #D2D478,
+    2px 2px 0 #277025,
+    3px 3px 0 #277025,
+    4px 4px 0 #D2D478;
+  }
+}
+
+#StoryInformation{
+  position: relative;
+  top: -90px;
+  left: 50px;
+  width: 1000px;
+  font-size: 20px;
+  color: #21492a;
+  font-family: "heyhoo";
+  background-color: rgba(255, 255, 255, 0.6);
+  border-radius: 12px;
+  padding: 5px;
+  text-align: center;
+}
+
+/*
+CSS of Contact
+*/
+
+#ContactContainer{
+  display: flex;
+  gap: 20px;
+  background: 
+    linear-gradient(to left, transparent, 50%, #B9D8A8);
+  width: 1100px;
+  height: 100px;
+  border-radius: 12px;
+  margin: 0 auto;
+  padding: 30px;
+}
+
+#QRpart{
+
+  & #QRcode {
+    width: 100px;
+    height: 100px;
+    position: relative;
+    bottom: 10px;
+    left: 30px;
+  }
+
+  & p {
+    color: #21492a;
+    font-size: 15px;
+    font-family: "heyhoo";
+    margin: 0px;
+    position: relative;
+    left: 20px;
+    bottom: 5px;
+  }
+
+  & :hover {
+    transition-duration: 1s;
+    transform: scale(1.03);
+  }
+}
+
+
+#contactBar {
+
+  text-align: center;
+  padding: 20px;
+
+  & #connectIcon {
+    display: flex;
+    gap: 15px;
+  
+    & img {
+      width: 50px;
+      height: 50px;
+    }
+  
+    & :hover {
+      cursor: pointer;
+      transition-duration: 1s;
+      transform: scale(1.1);
+    }
+  
+    & p {
+      color: #21492a;
+      font-size: 20px;
+      font-family: "heyhoo";
+    }
+  }
+}
+
+#moreSuggestion {
+  position: relative;
+  top: 40px;
+
+  & p {
+  color: #21492a;
+  font-size: 20px;
+  font-family: "heyhoo";
+  background-color: rgba(255, 255, 255, 0.6);
+  border-radius: 12px;
+  padding: 10px;
+  text-align: center; 
+  }
+  
+  & img {
+    position: relative;
+    bottom: 60px;
+    left: -45px;
+    width: 40px;
+    height: 40px;
+  }
+
+  & :hover {
+    cursor: pointer;
+    transition-duration: 1s;
+    transform: scale(1.1);
+  }
+
+}
+
+/*
+CSS of article page
+*/
+
+.article-container{
+  margin: 20px;
+  border: 50px;
+}
+
+#articlesHeader{
+  background: linear-gradient(to right, transparent, #B9D8A8);
+  color: #21492a;
+  text-align: center;
+  box-shadow: 0 5px 3px lightgray;
+  margin: 20px;
+  border: 50px;
+  font-family: "welovepeace";
+  font-size: 60px;
+  letter-spacing: 10px;
+  text-shadow: 
+  1px 1px 0 #D2D478,
+  2px 2px 0 #277025,
+  3px 3px 0 #277025,
+  4px 4px 0 #D2D478;
+} 
+
+.ArticleButtons{
+  margin-left: 10px;
+  margin-right: 10px;
+  margin-bottom: 10px;
+  padding: 10px 20px;
+  font-family: "welovepeace";
+
+  & a{
+    text-decoration: none;
+    color: #ffffff;
+  }
+
+  
+  & button {
+    margin-right: 20px;
+    padding:  10PX 20px;
+    font-family: "heyhoo";
+    letter-spacing: 3px;
+    font-size: 25px;
+    text-decoration: none;
+    color: #ffffff;
+    background-color: #ad3408;
+    border-radius: 12px;
+    border: dotted;
+    animation: tada 1s;
+    position: relative;
+    left:120px;
+  }
+
+  & :hover{
+    animation-duration: 1s;
+    background-color: #d27a7b;
+    transition: background-color 0.3s ease;
+    cursor: pointer;
+  }
+
+  & :focus{
+    outline: none;
+  }
+
+  & :active{
+      animation: none;
+  }
+
+  & #publish {
+    position: relative;
+    left:800px;
+  }
+}
+
+.article-links{
+  background-color: rgba(255, 255, 255, 0.5);
+  margin: 0 auto;
+  padding: 20px;
+  border: 0.3rem outset #efaaa5;
+  outline: 0.3rem solid #B9D8A8;
+  border-radius: 12px;
+  width: 1200px;
+  color: #21492a;
+  font-family: "roboto";
+}
+
+.LinksofArticles{
+  padding: 0px;
+  margin: 0px;
+  display: grid;
+  grid-template-columns: auto auto auto;
+  column-gap: 10px;
+  align-items: baseline;
+
+& span {
+  position: relative;
+  text-align: right;
+}
+
+& .publisher {
+  font-size: 20px;
+}
+
+& .send {
+    position: relative;
+    left: 30px;
+    top: 5px;
+}
+
+& .pokemon{
+    position: relative;
+    top: 10px;
+    width: 30px;
+    height: 40px;
+}
+
+}
+
+#articleTitle{
+
+  & a{
+  position: relative;
+  font-size: 22px;
+  text-decoration: none;
+  padding: 20px;
+  color:#21492a;
+  letter-spacing: 1px;
+  left: 35px;
+  cursor: pointer;
+  }
+
+  & :hover{
+  transition-duration: 0.5s;
+  color: #ad3408;
+  }
+}
+
+#articleLikeButton{
+  position: relative;
+  left: 50px;
+
+  & button{
+    background-color: rgba(255, 255, 255, 0.6);
+    color: #a85337;
+    font-family: "roboto";
+    text-decoration: none;
+    border: none ;
+    border-radius: 12px;
+    padding: 5px;
+    cursor: pointer;
+  }
+
+  & span{
+    font-size: 16px;
+  }
+
+}
+
+.search{
+  position: relative;
+  
+  
+  & label{
+    margin-left: 20px;
+    font-size: 15px;
+    color: #a85337;
+    font-family: "roboto";
+    font-size: bold;
+  }
+
+  & textarea{
+    height: 20px;
+    cursor: url('text.cur'), auto;
+  }
+
+  & button{
+    font-size: 15px;
+    font-family: "roboto";
+    color: #a85337;
+    margin-left: 10px;
+    padding: 5px;
+    width: auto;
+    background-color: rgb(255, 255, 255);
+    border: none;
+    border-radius: 5px;
+  }
+
+  & button:hover{
+    cursor: pointer;
+  }
+} 
+
+ #no-match{
+  position: relative;
+  left: 20px;
+  font-size: 20px;
+}
+
+/*
+CSS of publish article
+*/
+
+#articlePublishHeader{
+  position: relative;
+  top: 30px;
+  color: #a85337;
+  text-align: left;
+  box-shadow: 0 5px 3px lightgray;
+  margin: 20px;
+  padding: 20px;
+  font-family: "welovepeace";
+  font-size: 30px;
+  letter-spacing: 5px;
+}
+
+#publishArticles-container{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 50px;
+
+  & p {
+    position: relative;
+    top: 50px;
+    left: 350px;
+    font-size: 20px;
+    font-family: "welovepeace";
+    color: #a85337;
+    
+  }
+
+
+  & #submit {
+    position: relative;
+    left: 650px;
+    margin: 15px;
+    width: 200px;
+    height: 50px;
+    background-color: rgba(255, 255, 255, 0.6);
+    font-family: "welovepeace";
+    font-size: 20px;
+    color: #a85337;
+    border: #a85337 dotted ;
+    border-radius: 12px;
+    cursor: pointer;
+    
+    &:hover {
+      transition-duration: 0.5s;
+      transform: scale(1.03);
+    }
+  }
+}
+
+#content-upload{
+  display: flex;
+}
+
+.fileinput-button{
+  position: relative;
+  top: 50px;
+  left: 100px;
+  display: inline-block;
+  overflow: hidden;
+  font-family: "roboto";
+  padding: 10px;
+  color: #a85337;
+  border-radius: 12px;
+}
+
+#article_title {
+  position: relative;
+  top: 30px;
+  left: 350px;
+  width: 800px;
+  height: 30px;
+  font-size: 20px;
+  color: #333;
+  font-family: Arial, sans-serif;
+  border: 1px solid #ccc;
+  border-radius: 2px;
+  padding: 5px;
+  box-shadow: 1px 1px 2px #ccc;
+}
+
+#article_content{
+    position: relative;
+    top: 30px;
+    left: 350px;
+    width: 800px;
+    height: 500px;
+    font-size: 20px;
+    color:black;
+    font-family: Arial, sans-serif;
+    border: 1px solid #ccc;
+    border-radius: 2px;
+    padding: 5px;
+    box-shadow: 1px 1px 2px #ccc;
+}
+
+.pop-up-publish {
+  background: url("$lib/image/pawBG.png");
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  padding: 50px;
+  border: 1px solid #ccc;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  font-family: Arial, sans-serif;
+  z-index: 1;
+
+  & p{
+    font-size: 20px;
+  }
+
+  & button{
+    width: 80px;
+    height: 40px;
+    font-size: 20px ;
+    margin: 10px;
+    background-color: #1e90ff;
+    color: #fff;
+    border: none;
+    border-radius: 12px;
+    padding: 10px;
+    cursor: pointer;
+    
+  }
+}
+
+/*
+CSS of founder story page
+*/
+#recruitHeader{
+  position: relative;
+  color: black;
+  text-align: center;
+  text-shadow: 
+  1px 1px 0 #d27a7b,
+  2px 2px 0 #dfdaa3,
+  3px 3px 0 #d27a7b,
+  4px 4px 0 #dfdaa3;
+  font-family: "fornest";
+  margin-bottom: -20px;
+  letter-spacing: 3px;
+  font-size: 40px;
+  animation: fade-in ease 1.5s;
+  animation-fill-mode: forwards;
+
+  &:hover {
+      transition-duration: 1s;
+      transform: scale(1.03);
+    }
+}
+
+#globe {
+  position: absolute;
+  left: 400px;
+  top: 240px;
+  width: 50px;
+  height: 50px;
+}
+
+#usersgroup {
+  position: absolute;
+  right: 400px;
+  top: 240px;
+  width: 50px;
+  height: 50px;
+}
+
+
+.founderHeader{
+  background: linear-gradient(to right, transparent, #B9D8A8);
+  color: #21492a;
+  text-align: center;
+  box-shadow: 0 5px 3px lightgray;
+  margin: 20px;
+  text-shadow: 
+  1px 1px 0 #D2D478,
+  2px 2px 0 #277025,
+  3px 3px 0 #277025,
+  4px 4px 0 #D2D478;
+
+  & h1 {
+      position: relative;
+      top: 10px;
+      font-size: 50px;
+      font-family: "welovepeace";
+      letter-spacing: 10px;
+  }
+
+  & h2 {
+      position: relative;
+      left: 200px;
+      bottom: 10px;
+      font-size: 25px;
+      font-family: "fornest";
+      letter-spacing: 2px;
+  }
+}
+
+
+#founderPhotoDisplay {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 30px;
+
+
+  & .photo{
+  width: 1100px;
+  height: 750px;
+  }
+}
+
+.display {
+  transition: opacity 0.1s;
+}
+
+
+#content1 {
+  position: absolute;
+  z-index: 1;
+  top: 400px;
+  left: 300px;
+}
+
+#content2 {
+  position: absolute;
+  z-index: 1;
+  top: 1200px;
+  left: 300px;
+}
+
+#content3 {
+  position: absolute;
+  z-index: 1;
+  top: 2000px;
+  left: 300px;
+}
+
+#content4 {
+  position: absolute;
+  z-index: 1;
+  top: 2800px;
+  left: 300px;
+}
+
+.image{
+  position: relative;
+}
+
+.photoTitle {
+  font-size: 40px;
+  color:#21492a;
+  margin: 0;
+  font-family: "welovepeace";
+  font-size: 40px;
+  padding-top: 20px;
+  text-shadow: 
+  1px 1px 0 #d27a7b,
+  2px 2px 0 #dfdaa3,
+  3px 3px 0 #d27a7b,
+  4px 4px 0 #dfdaa3;
+
+  &:hover {
+      transition-duration: 1s;
+      transform: scale(1.03);
+    }
+  }
+  
+.photoSubtitle{
+  font-size: 30px;
+  color:#21492a;
+  margin: 0;
+  font-family: "welovepeace";
+  padding-top: 20px;
+  text-shadow: 
+  1px 1px 0 #d27a7b,
+  2px 2px 0 #dfdaa3,
+  3px 3px 0 #d27a7b,
+  4px 4px 0 #dfdaa3;
+
+  &:hover {
+      transition-duration: 1s;
+      transform: scale(1.03);
+    }
+  }
+
+.photoInfo{
+  text-align: justify;
+  width: 380px;
+  height: 200px;
+  text-indent: 2em;
+  color: #21492a;
+  font-family:"roboto";
+  line-height: 32px;
+  font-size: 22px;
+  }
+
+.personalEmail{
+  position: relative;
+  bottom: 50px;
+  color: #21492a;
+  font-family:"fornest";
+  font-size: 22px;
+  background-color: rgba(255, 255, 255, 0.6);
+  border-radius: 12px;
+  padding: 20px;
+  text-align: center;
+  letter-spacing: 2px;
+  text-shadow: 
+  1px 1px 0 #d27a7b,
+  2px 2px 0 #dfdaa3,
+  3px 3px 0 #d27a7b,
+  4px 4px 0 #dfdaa3;
+
+  &:hover {
+      transition-duration: 1s;
+      transform: scale(1.03);
+    }
+  }
+
+  #YurajEmail{
+    position: relative;
+    bottom: 100px;
+  }
+
+  .fade {
+      animation: fade-in ease 1.5s;
+      animation-fill-mode: forwards;
+  }
+
+  .fadeOut { opacity: 0; }
+  .fadeIn { opacity: 1; }
+
+  @keyframes fade-in {
+      from {
+          opacity: 0;
+          transform: translateY(20px);
+      }
+      to{
+          opacity: 1;
+          transform: translateY(0);
+      }
+  }
+
+  /*
+CSS of edit page
+*/
+
+.edit-button{
+    display: flex;
+    flex-direction: row;
+    margin: 0 auto;
+    gap: 20px;
+
+    & button{
+      width: 200px;
+      height: 50px;
+      background-color: rgba(255, 255, 255, 0.6);
+      font-family: "welovepeace";
+      font-size: 20px;
+      color: #a85337;
+      border: #a85337 dotted ;
+      border-radius: 12px;
+
+      &:hover {
+        transition-duration: 0.5s;
+        transform: scale(1.03);
+        cursor: pointer;
+      }
+    }
+
+    & a{
+      text-decoration: none;
+      color: #a85337;
+    }
+}
+
+  /*
+CSS of profile page
+*/
+
+#profilePage-header{
+  position: relative;
+  top: 30px;
+  color: #a85337;
+  text-align: left;
+  box-shadow: 0 5px 3px lightgray;
+  margin: 20px;
+  padding: 20px;
+  font-family: "welovepeace";
+  font-size: 30px;
+  letter-spacing: 5px;
+}
+
+#profilePage-container {
+  display: flex;
+  background-color: rgba(255, 255, 255, 0.6);
+  margin: 0 auto;
+  margin-top: 100px;
+  margin-bottom: 100px;
+  width: 1000px;
+
+  padding: 30px;
+}
+
+#PP {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+
+  
+  & img{
+    width: 200px;
+    height: 200px;
+    margin: 20px;
+    padding: 20px;
+  }
+
+  & button{
+    position: relative;
+    bottom: 30px;
+    background-color: rgba(255, 255, 255, 0.8);
+    color: #a85337;
+    border: dotted 2px;
+    border-radius: 12px;
+    margin: 0 auto;
+    padding: 10px;
+    width: 200px;
+    font-size: 18px;
+    font-family: "roboto";
+    cursor: pointer;
+  }
+}
+
+#all-infomation{
+  font-family: "roboto";
+  font-size: 20px;
+  padding: 20px;
+
+  & button{
+    position: relative;
+    width: 80px;
+    font-size: 15px;
+    font-family: "roboto";
+    padding: 5px;
+    margin: 5px;
+    cursor: pointer;
+    background-color: rgba(255, 255, 255, 0.8);
+    color: #a85337;
+    border: dotted 2px;
+    border-radius: 12px;
+    padding: 10px;
+  }
+
+  & a{
+    text-decoration: none;
+    color: #a85337;
+  }
+}
+
+#user-information{
+  & span{
+    display: flex;
+    gap:15px;
+  }
+}
+
+.info-title{
+  color: #555a5f;
+  font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+
+
+.pop-up-delete{
+  background: url("$lib/image/pawBG.png");
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  padding: 50px;
+  border: 1px solid #ccc;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  font-family: Arial, sans-serif;
+  z-index: 1;
+
+  & p{
+    font-size: 20px;
+    margin: 0 auto;
+  }
+
+  & button{
+    background-color: #1e90ff;
+    color: #fff;
+    border: none;
+    border-radius: 12px;
+    padding: 10px;
+    font-family: "roboto";
+    width: 80px;
+    height: 40px;
+    margin: 10px;
+    cursor: pointer;
+    font-size: 15px;
+  }
+}
+
+.pop-up-deactivate{
+  background: url("$lib/image/pawBG.png");
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  padding: 50px;
+  border: 1px solid #ccc;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  font-family: Arial, sans-serif;
+  z-index: 1;
+
+  & button{
+    position: relative;
+    left: 120px;
+    top: 20px;
+    background-color: #1e90ff;
+    color: #fff;
+    border: none;
+    border-radius: 12px;
+    padding: 10px;
+    font-family: "roboto";
+    width: 80px;
+    height: 40px;
+    margin: 10px;
+    cursor: pointer;
+    font-size: 15px;
+  }
+
+  & a{
+    text-decoration: none;
+    color: #fff;
+  }
+}
+
+#deactivateinfo-container{
+background-color: rgba(255, 255, 255, 0.8);
+border: #a85337 dotted;
+border-radius: 12px;
+padding: 20px;
+text-align: center;
+width: 400px;
+
+  & #deactivate-alert{
+    font-size: 20px;
+  }
+
+  & #deactivate{
+    font-size: 15px;
+    color: red;
+  }
+}
+
+.pop-up-profileChange {
+  z-index: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 50px;
+  width: 600px;
+  background: url("$lib/image/pawBG.png");
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  padding: 50px;
+  border: 1px solid #ccc;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  font-family: Arial, sans-serif;
+
+  & p{
+    font-size: 20px;
+    margin-bottom: 0px;
+    color: #a85337;
+    font-family: "welovepeace";
+  }
+
+  & #profile-info{
+    display: flex;
+  }
+
+  & button{
+    position: relative;
+    left: 200px;
+    background-color: #1e90ff;
+    color: #fff;
+    border: none;
+    border-radius: 12px;
+    padding: 10px;
+    font-family: "roboto";
+    width: 80px;
+    height: 40px;
+    margin: 10px;
+    cursor: pointer;
+    font-size: 15px;
+  }
+}
+
+#profile-container{
+  display: flex;
+
+  & button{
+    position: relative;
+    left: -30px;
+    top: 100px;
+    width: 30px;
+    background-color: #1e90ff;
+    color: #fff;
+    border: none;
+    border-radius: 12px;
+    padding: 10px;
+    font-family: "roboto";
+  }
+
+  & img{
+    position: relative;
+    left: -30px;
+    top: 50px;
+    width: 150px;
+    height: 150px;
+  }
+}
+
+#info-container{
+  display: flex;
+  flex-direction: column;
+
+  & span{
+    display: flex;
+    gap: 15px;
+    padding: 15px;
+  }
+
+  & #individual-info-change{
+    position: relative;
+    width: 200px;
+    height: 50px;
+  } 
+
+}
+
+#username-container{
+  display: flex;
+  flex-direction: column;
+}
+
+#username-alert{
+  color: red;
+  font-size:12px;
+  font-family: "roboto";
+}
+
+
+  /*
+CSS of deactivate Page
+*/
+#deactivate-container{
+  position: relative;
+  margin: 0 auto;
+  text-align: center;
+
+}
+
+
+#deactivate-img{
+  margin: 20px;
+}
+
+#deactivate-info{
+font-size: 25px;
+font-family: "welovepeace";
+color: #a85337;
+padding: 10px;
+margin: 10px;
+}
+
+#deactivate-button{
+  border: dotted #a85337;
+  border-radius: 12px;
+  background-color: rgba(255, 255, 255, 0.6);
+  padding: 10px;
+  font-size: 15px;
+  font-family: "welovepeace";
+
+  & a{
+    text-decoration: none;
+    color: #a85337;
+  }
+}
+
+  /*
+CSS of specific Article Page
+*/
+
+hr{
+  border: 0;
+  padding: 3px;
+  background: repeating-linear-gradient(135deg, #a2a9b6 0px, #a2a9b6 1px, transparent 1px, transparent 6px);
+}
+
+aside.user-profile {
+  width: 200px;
+  padding: 20px;
+  background-color: #fff;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  position: fixed;
+  left: 50px;
+  top: 100px;
+  overflow-y: auto;
+  z-index: 1;
+
+  & .profile-content{
+    position: relative;
+  }
+
+  & img {
+      border: solid grey 1px;
+      width: 80%;
+      height: auto;
+      display: block;
+      object-fit: cover;
+      object-position: center;
+      margin-bottom: 10px;
+      margin: 0 auto;
+  }
+
+  & p {
+    text-align: center;
+    font-size: 18px;
+    margin: 0;
+    color: black;
+  }
+
+  & #author-label {
+    color: rgb(32, 32, 180);
+  }
+}
+
+
+#specificArticle-container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: auto;
+    background-color: rgba(255,255,255,0.6);
+    font-family: Arial, sans-serif;
+    font-size: 18px;
+
+    & article{
+      max-width: 1000px;
+      padding: 20px;
+      background-color: #fff;
+      border-radius: 8px;
+      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+      overflow: hidden;
+      position: relative;
+    }  
+
+    & h1 {
+      text-align: center;
+    }
+  
+    & img {
+      width: 80%;
+      height: 450px;
+      display: block;
+      object-fit: cover;
+      object-position: center center;
+      size: 200px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    & h1 {
+      font-size: 24px;
+      margin-bottom: 10px;
+    }
+  
+    & #info-time-author {
+      font-size: 14px;
+      color: #888;
+      margin-bottom: 20px;
+    }
+  
+    & .content {
+      list-style: decimal;
+      margin-left: 1.5em;
+      padding-left: 0.5em;
+    }
+}
+
+#comments-container {
+  position: relative;
+  top: 30px;
+  margin-bottom: 30px; 
+
+  & form {
+    display: flex;
+    flex-direction: column;
+    margin: 25px;
+  }
+
+  & textarea {
+    width: 100%;
+    resize: vertical;
+    padding: 10px;
+    border-radius: 4px;
+    border: 1px solid #ccc;
+  }
+
+  & button[type="submit"] {
+    width: 100px;
+    margin: 0 auto;
+    margin-top: 20px;
+    padding: 10px 20px;
+    background-color: #1e90ff;
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    font-size: 16px;
+    cursor: pointer;
+    
+  }
+
+  & button[type="submit"]:hover {
+    background-color: #007bff;
+  }
+
+  & ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+}
+
+#commentor-container{
+    display: flex;
+    gap: 5px;
+    margin-bottom: 10px;
+    padding: 10px;
+    border-radius: 4px;
+    background-color: #f7f7f7;
+    
+
+  & #commentor-PP{
+    width: 100px;
+    height: 100px;
+    position: relative;
+    right: 280px;
+  }
+  
+  & #commentor-name{
+    font-size: 15px;
+    position: relative;
+    right: 550px;
+  }
+  
+  & #comment-content{
+    font-size: 20px;
+    position: relative;
+    right: 550px;
+  }
+
+  & button{
+    width: 70px;
+    height: 30px;
+    position: relative;
+    top: 70px;
+    background-color: #1e90ff;
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+  }
+}
+
+#show-hide-comments{
+  width: 200px;
+  margin: 0 auto;
+  margin: 20px;
+  padding: 10px 20px;
+  background-color: #1e90ff;
+  color: #fff;
+  border: none;
+  border-radius: 4px;
+  font-size: 16px;
+  cursor: pointer;
+
+  &:hover{
+    background-color: #007bff;
+  }
+}
