@@ -1,10 +1,10 @@
-import express from 'express';
-import {addcomments, getcomments } from '../../data/comments.js';
+import express from "express";
+import { addcomments, getcomments } from "../../data/comments.js";
 
 const router = express.Router();
 
 // Endpoint for adding comments
-router.post('/', async (req, res) => {
+router.post("/", async (req, res) => {
   console.log("...post comment...");
   try {
     const commentData = req.body;
@@ -12,8 +12,8 @@ router.post('/', async (req, res) => {
     const commentId = await addcomments(commentData);
     res.status(201).json({ commentId });
   } catch (error) {
-      console.error('Error adding comment:', error);
-      res.status(500).json({ error: 'Failed to add comment' });
+    console.error("Error adding comment:", error);
+    res.status(500).json({ error: "Failed to add comment" });
   }
 });
 
@@ -23,7 +23,7 @@ router.get("/:id", async (req, res) => {
     const comments = await getcomments(req.params.id);
     console.log("...got comments...");
     console.log(comments);
-    res.status(200).json({ comments});
+    res.status(200).json({ comments });
   } catch (error) {
     console.error("Error fetching comments:", error);
     res.status(500).json({ error: "Failed to fetch comments" });

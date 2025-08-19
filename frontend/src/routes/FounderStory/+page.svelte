@@ -3,8 +3,6 @@
   import DividingLine from "$lib/components/DividingLine.svelte";
   import FounderStory from "$lib/components/FounderStory/FounderStory.svelte";
   import Contact from "$lib/components/MainPage/Contact/Contact.svelte";
-
-
 </script>
 
 <svelte:head>
@@ -31,5 +29,3 @@
 
 <!-- The last dividing line -->
 <DividingLine />
-
-

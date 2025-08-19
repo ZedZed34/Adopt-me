@@ -1,9 +1,9 @@
 // Import necessary dependencies
-import { writable } from 'svelte/store';
+import { writable } from "svelte/store";
 
 // Define the user store
 const userStore = writable({
-  isLoggedIn: false,
+  isLoggedIn: false
   // Add other user data properties as needed
 });
 
@@ -13,13 +13,12 @@ export const user = {
   login: (userData) => {
     userStore.set({
       isLoggedIn: true,
-      ...userData,
+      ...userData
     });
   },
   logout: () => {
     userStore.set({
-      isLoggedIn: false,
+      isLoggedIn: false
     });
-  },
+  }
 };
-

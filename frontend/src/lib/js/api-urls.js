@@ -26,7 +26,3 @@ export const PATCH_URL = `${BASE_URL}/articles`;
 //----------------------------------------------------------------------------------------------------
 
 export const COMMENT_URL = `${BASE_URL}/comments`;
-
-
-
-

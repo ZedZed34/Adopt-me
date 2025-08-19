@@ -1,9 +1,8 @@
 <script>
-    import ArticlePage from "$lib/components/Articles/ArticlePage.svelte";
-    import DividingLine from "$lib/components/DividingLine.svelte";
-    import Contact from "$lib/components/MainPage/Contact/Contact.svelte";
-export let data;
-
+  import ArticlePage from "$lib/components/Articles/ArticlePage.svelte";
+  import DividingLine from "$lib/components/DividingLine.svelte";
+  import Contact from "$lib/components/MainPage/Contact/Contact.svelte";
+  export let data;
 </script>
 
 <svelte:head>
@@ -17,7 +16,7 @@ export let data;
 <DividingLine />
 
 <!-- The main part to show the articless -->
-<ArticlePage user = {data.user}  />
+<ArticlePage user={data.user} />
 
 <!-- The dividing line after main part -->
 <DividingLine />
@@ -27,5 +26,3 @@ export let data;
 
 <!-- The last dividing line -->
 <DividingLine />
-
-

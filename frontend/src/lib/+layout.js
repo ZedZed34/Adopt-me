@@ -14,4 +14,3 @@ export async function load({ fetch }) {
   const isLoggedIn = !!user;
   return { user, isLoggedIn };
 }
-

@@ -6,4 +6,4 @@
   <title>Login</title>
 </svelte:head>
 
-<Login/>
+<Login />

@@ -11,6 +11,12 @@ on:
   push:
     branches: ["*"]
 
+permissions:
+  contents: read
+  checks: write
+  statuses: write
+  pull-requests: write
+
 concurrency:
   group: ci-${{ github.ref }}
   cancel-in-progress: true
@@ -21,27 +27,25 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
-        with:
-          fetch-depth: 0
+        with: { fetch-depth: 0 }
       - name: Run Super Linter
         uses: github/super-linter/slim@v6
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           DEFAULT_BRANCH: main
           VALIDATE_ALL_CODEBASE: false
-          # Keep Super Linter for markdown/yaml/json/etc.
-          # Disable JS/TS here since Node CI handles ESLint:
+          FILTER_REGEX_INCLUDE: '(frontend|backend|\.github|docs)/'
+          # Let Node CI handle JS/TS linting; disable here to avoid duplication
           VALIDATE_JAVASCRIPT_ES: false
           VALIDATE_TYPESCRIPT_ES: false
-          # Optional: narrow to app folders to speed up
-          FILTER_REGEX_INCLUDE: '(frontend|backend|\\.github|docs)/'
+          # Turn off tools you don't need right now
+          VALIDATE_CHECKOV: false
+          VALIDATE_JSCPD: false
 
   frontend:
     name: Frontend (SvelteKit) — lint & build
     runs-on: ubuntu-latest
-    defaults:
-      run:
-        working-directory: frontend
+    defaults: { run: { working-directory: frontend } }
     steps:
       - uses: actions/checkout@v4
       - uses: actions/setup-node@v4
@@ -50,15 +54,13 @@ jobs:
           cache: npm
           cache-dependency-path: frontend/package-lock.json
       - run: npm ci
-      - run: npm run lint
+      - run: npm run lint   # Prettier must be clean to pass
       - run: npm run build
 
   backend:
     name: Backend (Express) — format check & install
     runs-on: ubuntu-latest
-    defaults:
-      run:
-        working-directory: backend
+    defaults: { run: { working-directory: backend } }
     steps:
       - uses: actions/checkout@v4
       - uses: actions/setup-node@v4

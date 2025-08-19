@@ -7,14 +7,11 @@
   import Articles from "$lib/components/MainPage/Articles/Articles.svelte";
   import FounderStory from "$lib/components/MainPage/FounderStory/FounderStory.svelte";
   import Contact from "$lib/components/MainPage/Contact/Contact.svelte";
-
-
 </script>
 
 <svelte:head>
   <title>Adopt me</title>
 </svelte:head>
-
 
 <!-- The Header -->
 <Header />

@@ -4,14 +4,11 @@
   import LeftPart from "./LeftPart.svelte";
 </script>
 
-
 <!-- First part: Introduction + Scroll picture display + activity notices + side nav bar -->
 <div id="firstPart">
+  <LeftPart />
 
-    <LeftPart />
+  <Introduction />
 
-    <Introduction />
-
-    <SideNavBar />
-
+  <SideNavBar />
 </div>

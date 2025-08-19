@@ -1,24 +1,22 @@
 <script>
-    import { PUBLIC_IMAGES_URL } from "$env/static/public";
-    import DividingLine from "$lib/components/DividingLine.svelte";  
-    import DeactivateAccount from "$lib/components/ProfilePage/DeactivateAccount.svelte";
-    import Contact from "$lib/components/MainPage/Contact/Contact.svelte";
-  
-  </script>
+  import { PUBLIC_IMAGES_URL } from "$env/static/public";
+  import DividingLine from "$lib/components/DividingLine.svelte";
+  import DeactivateAccount from "$lib/components/ProfilePage/DeactivateAccount.svelte";
+  import Contact from "$lib/components/MainPage/Contact/Contact.svelte";
+</script>
 
-  
 <svelte:head>
   <title>Adopt me</title>
 </svelte:head>
 
 <!-- The profilepage to show -->
-  <DeactivateAccount />
+<DeactivateAccount />
 
 <!-- The second dividing line-->
-  <DividingLine />
+<DividingLine />
 
 <!-- The contact bar-->
-  <Contact/>
+<Contact />
 
 <!-- The last dividing line-->
-  <DividingLine />
+<DividingLine />

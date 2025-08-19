@@ -1,6 +1,6 @@
 <script>
-import DividingLine from "$lib/components/DividingLine.svelte";
-  </script>
+  import DividingLine from "$lib/components/DividingLine.svelte";
+</script>
 
 <h1 id="mainHeader">Adopt me!</h1>
 
