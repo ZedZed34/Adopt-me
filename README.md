@@ -1,6 +1,8 @@
 # A personal blogging system (ADOPT ME)
 
-![](./frontend//src//lib//image//scroll-4.png)
+![](./frontend//src/lib/image/Screenshot.jpg)
+
+
 
 The website which enables to post articles of adopting any animals.
 
