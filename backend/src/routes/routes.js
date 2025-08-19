@@ -20,7 +20,7 @@ router.get("/", (req, res) => {
 /**
  * Add child routes
  */
-import apiRoutes from "api/api.js";
+import apiRoutes from "./api/api.js";
 
 /**
  * BY HLA
