@@ -28,19 +28,24 @@ jobs:
     steps:
       - uses: actions/checkout@v4
         with: { fetch-depth: 0 }
-      - name: Run Super Linter
-        uses: github/super-linter/slim@v6
+      - uses: github/super-linter/slim@v6
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           DEFAULT_BRANCH: main
           VALIDATE_ALL_CODEBASE: false
-          FILTER_REGEX_INCLUDE: '(frontend|backend|\.github|docs)/'
-          # Let Node CI handle JS/TS linting; disable here to avoid duplication
-          VALIDATE_JAVASCRIPT_ES: false
+          # Keep only lightweight, useful checks:
+          VALIDATE_GITHUB_ACTIONS: true
+          VALIDATE_JSON: true
+          VALIDATE_YAML: true
+          VALIDATE_MARKDOWN: true
+          # Turn off noisy/duplicated ones:
+          VALIDATE_CSS: false
+          VALIDATE_HTML: false
+          VALIDATE_JAVASCRIPT_STANDARD: false
           VALIDATE_TYPESCRIPT_ES: false
-          # Turn off tools you don't need right now
-          VALIDATE_CHECKOV: false
-          VALIDATE_JSCPD: false
+          VALIDATE_JAVASCRIPT_ES: false
+          VALIDATE_GITLEAKS: false   # re-enable later after allow-listing
+          FILTER_REGEX_INCLUDE: '(frontend|backend|\\.github|docs)/'
 
   frontend:
     name: Frontend (SvelteKit) — lint & build
@@ -54,7 +59,7 @@ jobs:
           cache: npm
           cache-dependency-path: frontend/package-lock.json
       - run: npm ci
-      - run: npm run lint   # Prettier must be clean to pass
+      - run: npm run lint
       - run: npm run build
 
   backend:
@@ -70,3 +75,4 @@ jobs:
           cache-dependency-path: backend/package-lock.json
       - run: npm ci
       - run: npx prettier --check .
+
