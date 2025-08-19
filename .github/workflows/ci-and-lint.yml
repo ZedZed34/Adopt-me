@@ -1,21 +1,15 @@
-# This workflow runs lint and build checks on the frontend and backend
-# whenever you push code or open a pull request.
-name: CI - Lint & Build
+# This workflow executes several linters on changed files based on languages used in your code base whenever
+# you push a code or open a pull request.
+#
+# You can adjust the behavior by modifying this file.
+# For more information, see:
+# https://github.com/github/super-linter
+name: CI & Lint
 
 on:
-  pull_request:
   push:
-    branches: ["*"]
-
-permissions:
-  contents: read
-  checks: write
-  statuses: write
-  pull-requests: write
-
-concurrency:
-  group: ci-${{ github.ref }}
-  cancel-in-progress: true
+    branches: [ "*" ]
+  pull_request:
 
 jobs:
   frontend:
@@ -50,3 +44,4 @@ jobs:
           cache-dependency-path: backend/package-lock.json
       - run: npm ci
       - run: npx prettier --check .
+
