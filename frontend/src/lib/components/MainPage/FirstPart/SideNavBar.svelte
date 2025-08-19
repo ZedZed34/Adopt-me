@@ -53,7 +53,13 @@
       <h3>Common Question</h3>
 
       {#each faqList as { question, answer }, index (index)}
-        <div class="faq" on:click={() => toggleAnswer(index)}>
+        <div
+          class="faq"
+          role="button"
+          tabindex="0"
+          on:click={() => toggleAnswer(index)}
+          on:keydown={(e) => e.key === "Enter" && toggleAnswer(index)}
+        >
           {question}
         </div>
         {#if activeQuestion === index}

@@ -8,7 +8,8 @@
     "preview": "vite preview",
     "lint": "prettier --plugin-search-dir . --check . && eslint .",
     "format": "prettier --plugin-search-dir . --write .",
-    "format:check": "prettier --check ."
+    "format:check": "prettier --check .",
+    "lint:fix": "prettier --write . && eslint . --fix"
   },
   "devDependencies": {
     "@sveltejs/adapter-auto": "^2.0.0",
