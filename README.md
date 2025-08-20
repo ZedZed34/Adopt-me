@@ -1,4 +1,4 @@
-# **Adopt Me** A personal blogging system
+# **Adopt Me**, A personal blogging system
 
 ![](./frontend//src/lib/image/Screenshot.jpg)
 
